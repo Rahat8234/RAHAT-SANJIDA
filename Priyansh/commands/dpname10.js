@@ -1,12 +1,12 @@
 module.exports.config = {
-  name: "anhdaden",
+  name: "dpname10",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-  description: "White brother :v",
-  commandCategory: "Edit-IMG",
-  usages: "[text 1] | [text 2]",
-  cooldowns: 10
+  credits: "RAHAT",
+  description: "dpname maker",
+  commandCategory: "dpname",
+  usages: "text 1 + text 2",
+  cooldowns: 1
 };
 module.exports.wrapText = (ctx, text, maxWidth) => {
   return new Promise((resolve) => {
@@ -45,10 +45,10 @@ module.exports.run = async function ({ api, event, args, Users }) {
   const request = require('request');
   const fs = global.nodemodule["fs-extra"];
   const axios = global.nodemodule["axios"];
-  let pathImg = __dirname + `/cache/anhdaden.png`;
-  const text = args.join(" ").trim().replace(/\s+/g, " ").replace(/(\s+\|)/g, "|").replace(/\|\s+/g, "|").split("|");
+  let pathImg = __dirname + `/cache/drake.png`;
+  const text = args.join(" ").trim().replace(/\s+/g, " ").replace(/(\s+\=)/g, "+").replace(/\|\s+/g, "+").split("+");
   let getImage = (
-    await axios.get(encodeURI(`https://i.imgur.com/2ggq8wM.png`), {
+    await axios.get(encodeURI(`https://i.imgur.com/czxzynv.jpeg`), {
       responseType: "arraybuffer",
     })
   ).data;
@@ -64,13 +64,13 @@ if(!fs.existsSync(__dirname+'/cache/SVN-Arial 2.ttf')) {
   Canvas.registerFont(__dirname+`/cache/SVN-Arial 2.ttf`, {
         family: "SVN-Arial 2"
     });
-  ctx.font = "30px SVN-Arial 2";
-  ctx.fillStyle = "#000077";
+  ctx.font = "40px SVN-Arial 2";
+  ctx.fillStyle = "#000000";
   ctx.textAlign = "center";
-  const line = await this.wrapText(ctx, text[0], 464);
+  const line = await this.wrapText(ctx, text[0], 400);
   const lines = await this.wrapText(ctx, text[1], 464);
-  ctx.fillText(line.join("\n"), 170, 129)
-  ctx.fillText(lines.join("\n"), 170, 440)
+  ctx.fillText(line.join("\n"), 230, 282)
+  ctx.fillText(lines.join("\n"), 480, 650)
   ctx.beginPath();
   const imageBuffer = canvas.toBuffer();
   fs.writeFileSync(pathImg, imageBuffer);
