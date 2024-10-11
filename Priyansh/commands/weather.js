@@ -2,8 +2,8 @@ module.exports.config = {
 	name: "weather",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-	description: "See weather information in the area",
+	credits: "RAHAT",
+	description: "news",
 	commandCategory: "other",
 	usages: "[Location]",
 	cooldowns: 5,
@@ -12,12 +12,11 @@ module.exports.config = {
 		"request": ""
 	},
 	envConfig: {
-		"OPEN_WEATHER": "b7f1db5959a1f5b2a079912b03f0cd96"
+		"OPEN_WEATHER": "c4ef85b93982d6627681b056e24bd438"
 	}
 };
 
 module.exports.languages = {
-
 	"en": {
 		"locationNotExist": "Can't find %1.",
 		"returnResult": "🌡 Temp: %1℃\n🌡 Feels like: %2℃\n☁️ Sky: %3\n💦 Humidity: %4%\n💨 Wind speed: %5km/h\n🌅 Sun rises: %6\n🌄 Sun sets: %7"
@@ -36,8 +35,8 @@ module.exports.run = async ({ api, event, args, getText }) => {
 		if (err) throw err;
 		var weatherData = JSON.parse(body);
 		if (weatherData.cod !== 200) return api.sendMessage(getText("locationNotExist", city), threadID, messageID);
-		var sunrise_date = moment.unix(weatherData.sys.sunrise).tz("Asia/Ho_Chi_Minh");
-		var sunset_date = moment.unix(weatherData.sys.sunset).tz("Asia/Ho_Chi_Minh");
+		var sunrise_date = moment.unix(weatherData.sys.sunrise).tz("Asia/Dhaka");
+		var sunset_date = moment.unix(weatherData.sys.sunset).tz("Asia/Dhaka");
 		api.sendMessage({
 			body: getText("returnResult", weatherData.main.temp, weatherData.main.feels_like, weatherData.weather[0].description, weatherData.main.humidity, weatherData.wind.speed, sunrise_date.format('HH:mm:ss'), sunset_date.format('HH:mm:ss')),
 			location: {
