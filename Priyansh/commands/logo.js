@@ -4,12 +4,12 @@ const request = require("request");
 
 module.exports = {
   config: {
-    name: "ephoto",
+    name: "logo",
     version: "2.0.0",
-    hasPermission: 0,
+    permission: 0,
     credits: "RAHAT",
     description: "",
-    usePrefix: true,
+    prefix: true,
     commandCategory: "user",
     usages: "text",
     cooldowns: 5,
@@ -251,7 +251,7 @@ module.exports = {
         setTimeout(function () {
           return api.sendMessage(
             {
-              body: `❐ THIS IS YOUR NAME EDIT ✌️\n\n___________________________________\n\n❐ This Bot Name : ${global.config.BOTNAME} 🤖\n❐ This Bot Owner : Khan Rahul RK😘\n❐ Your Input Name : ${name}\n\n___________________________________`,
+              body: `❐ THIS IS YOUR NAME EDIT ✌️\n\n___________________________________\n\n❐ This Bot Name : ${global.config.BOTNAME} 🤖\n❐ This Bot Owner :Khan Rahul RK😘\n❐ Your Input Name : ${name}\n\n___________________________________`,
               attachment: fs.createReadStream(__dirname + "/cache/ephoto.jpg"),
             },
             threadID,
