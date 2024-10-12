@@ -4,15 +4,13 @@ const request = require("request");
 
 module.exports.config = {
   name: "logo",
-  version: "1.0.",
+  version: "2.0.0",
   hasPermssion: 0,
   credits: "RAHAT",
   description: "Logo 1 Your Name",
   commandCategory: "other",
-  category: "others",
   usags: "logo",
   usePrefix: true,
-  prefix: true,
   cooldowns: 5,
   dependencies: {
       "nayan-server": "",
