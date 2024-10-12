@@ -1,13 +1,12 @@
-module.exports. = {
-  config:  {
+module.exports.config = {
   name: "logo",
   version: "1.0.0",
-  hasPermssion: 0,
+  permission: 0,
+  prefix: true,
   credits: "RAHAT",
-  description: "logo Name Edit",
-  usePrefix: true,
-  commandCategory: "logo",
-  usages: "logo 1 Your Name",
+  description: "logo 1 RAHAT",
+  category: "Logo",
+  usages: "Logo Media Rahul",
   cooldowns: 5,
   dependencies: {
     
