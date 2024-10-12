@@ -1,4 +1,5 @@
-module.exports.config = {
+module.exports. = {
+  config:  {
   name: "logo",
   version: "1.0.0",
   hasPermssion: 0,
@@ -9,9 +10,11 @@ module.exports.config = {
   usages: "logo 1 Your Name",
   cooldowns: 5,
   dependencies: {
-    'nayan-server': ''
+    
+  'nayan-server': ''
+    
   }
-},
+};
 
 start: async function({ nayan, events, args, NAYAN }) {
 
