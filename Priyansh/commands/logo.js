@@ -2,19 +2,21 @@ const fs = require("fs");
 const axios = require("axios");
 const request = require("request");
 
-module.exports = {
-  config: {
-  name: "logo",
-  version: "2.0.0",
-  hasPermssion: 0,
-  credits: "RAHAT",
-  description: "Logo 1 Your Name",
-  commandCategory: "other",
-  usags: "logo",
-  usePrefix: true,
-  cooldowns: 5,
-  dependencies: {
+module.exports.config = {
+    name: "logo",
+    version: "2.0.0",
+    hasPermission: 0,
+    credits: "RAHAT",
+    description: "",
+    usePrefix: true,
+    commandCategory: "user",
+    usages: "text",
+    cooldowns: 5,
+    dependencies: {
       "nayan-server": "",
+      "request": "",
+       "fs": "",
+       "axios": ""
     },
   },
 
