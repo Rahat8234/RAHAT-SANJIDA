@@ -6,10 +6,10 @@ module.exports = {
   config: {
     name: "logo",
     version: "2.0.0",
-    permission: 0,
+    usePermission: 0,
     credits: "RAHAT",
     description: "",
-    prefix: true,
+    usePrefix: true,
     commandCategory: "user",
     usages: "text",
     cooldowns: 5,
