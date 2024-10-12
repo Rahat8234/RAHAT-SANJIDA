@@ -2,7 +2,8 @@ const fs = require("fs");
 const axios = require("axios");
 const request = require("request");
 
-module.exports.config = {
+module.exports = {
+  config: {
   name: "logo",
   version: "2.0.0",
   hasPermssion: 0,
