@@ -2,13 +2,14 @@ const fs = require("fs");
 const axios = require("axios");
 const request = require("request");
 
-module.exports.config = {
+module.exports = {
+  config: {
     name: "ephoto",
     version: "2.0.0",
-    hasPermission: 0,
-    credits: "RAHAT",
+    permission: 0,
+    credits: "Nayan",
     description: "",
-    usePrefix: true,
+    prefix: true,
     commandCategory: "user",
     usages: "text",
     cooldowns: 5,
@@ -250,7 +251,7 @@ module.exports.config = {
         setTimeout(function () {
           return api.sendMessage(
             {
-              body: `❐ THIS IS YOUR NAME EDIT ✌️\n\n___________________________________\n\n❐ This Bot Name : ${global.config.BOTNAME} 🤖\n❐ This Bot Owner : KHAN Rahul RK😘\n❐ Your Input Name : ${name}\n\n___________________________________`,
+              body: `❐ THIS IS YOUR NAME EDIT ✌️\n\n___________________________________\n\n❐ This Bot Name : ${global.config.BOTNAME} 🤖\n❐ This Bot Owner : Mohammad Nayan😘\n❐ Your Input Name : ${name}\n\n___________________________________`,
               attachment: fs.createReadStream(__dirname + "/cache/ephoto.jpg"),
             },
             threadID,
