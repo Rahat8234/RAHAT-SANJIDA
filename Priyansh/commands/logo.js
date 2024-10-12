@@ -1,15 +1,14 @@
-module.exports = {
-  config: {
-        name: "logo",
-        version: "2.0.0",
-        hasPermission: 0,
-        credits: "RAHAT",
-        description: "",
-        usePrefix: true,
-        commandCategory: "user",
-        usages: "text",
-        cooldowns: 5,
-        dependencies: {
+module.exports.config = {
+  name: "logo",
+  version: "1.0.0",
+  hasPermssion: 0,
+  credits: "RAHAT",
+  description: "logo Name Edit",
+  usePrefix: true,
+  commandCategory: "logo",
+  usages: "logo 1 Your Name",
+  cooldowns: 5,
+  dependencies: {
     'nayan-server': ''
   }
 },
