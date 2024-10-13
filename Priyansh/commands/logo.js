@@ -1,8 +1,7 @@
 const fs = require("fs");
 const request = require("request");
 
-module.exports = {
-  config: {
+module.exports.config = {
     name: "logo",
     version: "2.0.0",
     hasPermission: 0,
