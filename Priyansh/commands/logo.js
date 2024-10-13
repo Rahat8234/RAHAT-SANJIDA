@@ -14,7 +14,8 @@ module.exports = {
     dependencies: {
       "nayan-server": "",
       "request": ""
-    },
+      
+    }
   },
 
   run: async function ({ api, event, args }) {
