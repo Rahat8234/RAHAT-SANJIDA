@@ -6,8 +6,8 @@
 module.exports.config = {
     name: "pv5",
     version: "1.0.0",
-    hasPermission: 0,
-    credits: "RAHAT",
+    hasPermission: 2,
+    credits: "Mohammad Nayan",
     description: "Pair Mention Fun🥹",
     usePrefix: true,
     commandCategory: "Khan Rahul RK",
