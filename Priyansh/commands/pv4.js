@@ -7,7 +7,7 @@ module.exports.config = {
     name: "pv4",
     version: "1.0.0",
     hasPermission: 0,
-    credits: "RAHAT",
+    credits: "Mohammad Nayan",
     description: "Pair Mention Fun🥹",
     usePrefix: true,
     commandCategory: "Khan Rahul RK",
