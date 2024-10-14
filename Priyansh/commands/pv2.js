@@ -6,7 +6,7 @@
 module.exports.config = {
     name: "pv2",
     version: "1.0.0",
-    hasPermission: 0,
+    hasPermission: 2,
     credits: "RAHAT",
     description: "Pair Mention Fun🥹",
     usePrefix: true,
