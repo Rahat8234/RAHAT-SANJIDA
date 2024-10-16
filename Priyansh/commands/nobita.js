@@ -3,7 +3,7 @@ module.exports.config = {
     name: "nobita",
     version: "1.0.0",
     hasPermission: 0,
-    credits: "Nayan",
+    credits: "RAHAT",
     description: "Nobita Sad Video",
     usePrefix: true,
     commandCategory: "Khan Rahul RK",
@@ -21,7 +21,7 @@ module.exports.run = async ({api,event,args,client,Users,Threads,__GLOBAL,Curren
 const axios = global.nodemodule["axios"];
 const request = global.nodemodule["request"];
 const fs = global.nodemodule["fs-extra"];
-   var hi = ["𝐃𝐎𝐑𝐄𝐌𝐎𝐍 𝐂𝐀𝐑𝐓𝐎𝐎𝐍𝐒 𝐍𝐎𝐁𝐈𝐓𝐀 𝐏𝐀𝐑𝐓 𝐎𝐅 𝐒𝐓𝐎𝐑𝐘 𝐕𝐈𝐃𝐄𝐎"];
+   var hi = ["𝐃𝐎𝐑𝐄𝐌𝐎𝐍 𝐂𝐀𝐑𝐓𝐎𝐎𝐍𝐒 𝐍𝐎𝐁𝐈𝐓𝐀 𝐏𝐀𝐑𝐓 𝐎𝐅 𝐒𝐓𝐎𝐑𝐘 𝐕𝐈𝐃𝐄𝐎 \n𝐂𝐫𝐞𝐚𝐭𝐞 𝐁𝐲 𝐊𝐡𝐚𝐧 𝐑𝐚𝐡𝐮𝐥 𝐑𝐊"];
   var know = hi[Math.floor(Math.random() * hi.length)];
   var link = [
 "https://i.imgur.com/u5N7sqe.mp4",
