@@ -1,5 +1,5 @@
 const config = {
-        name: "mention",
+        name: "tagv1",
         version: "1.6.9",
         author: "RAHAT",
         credits: "RAHAT",
