@@ -1,22 +1,43 @@
-module.exports.config = {
-  name: "goiadmin",
-  version: "1.0.0",
-  hasPermssion: 0,
-  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-  description: "Bot will rep ng tag admin or rep ng tagbot ",
-  commandCategory: "Other",
-  usages: "",
-  cooldowns: 1
+const config = {
+        name: "mention",
+        version: "1.6.9",
+        author: "RAHAT",
+        credits: "RAHAT",
+        countDown: 0,
+        role: 0,
+        hasPermission: 0,
+        description: "Tag user",
+        category: "tag",
+        commandCategory: "tag",
+        guide: "{pn} [reply/mention]",
+        usages: "reply or mention"
+    };
+
+const onStart = async ({ api, args, event }) => {
+       try {
+       const ID = event.messageReply.senderID || args[0];
+       const mentionedUser = await api.getUserInfo(ID);
+       if (mentionedUser && mentionedUser[ID]) {
+       const userName = mentionedUser[ID].name;
+       const text = args.join(" ");
+       await api.sendMessage({
+        body: `${userName} ${text}`,
+        mentions: [{
+            tag: userName,
+            id: ID 
+         }]
+       }, event.threadID, event.messageID);
+     } else {
+       api.sendMessage("Reply to a message to tag...", event.threadID, event.messageID);
+       }
+    } catch (error) {
+        console.log(error);
+        api.sendMessage(`Error: ${error.message}`, event.threadID, event.messageID);
+   }
+  };
+
+module.exports = {
+  config, 
+  onStart,
+  run: onStart
 };
-module.exports.handleEvent = function({ api, event }) {
-  if (event.senderID !== "100037743553265") {
-    var aid = ["100037743553265"];
-    for (const id of aid) {
-    if ( Object.keys(event.mentions) == id) {
-      var msg = ["Wo Busy H mujhe Bolo Kya Bolna H?", "Kya Hua Boss ko q Bula Rhe Ho?", "Wo Shayad Busy hoga", "Priyansh Toh Chala gaya"];
-      return api.sendMessage({body: msg[Math.floor(Math.random()*msg.length)]}, event.threadID, event.messageID);
-    }
-    }}
-};
-module.exports.run = async function({}) {
-        }
