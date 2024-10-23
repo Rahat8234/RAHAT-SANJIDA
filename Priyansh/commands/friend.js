@@ -13,7 +13,7 @@ usePrefix: true,
   countDown: 2
 }; 
 
-  module.exports.onLoad = async function({ api, event, args, Users, Threads, threadID, Currencies, senderID, messageID}) {
+  module.exports.run = async function({ api, event, args, Users, Threads, threadID, Currencies, senderID, messageID}) {
     if (module.exports.config.credits !== "Mohammad Nayan") {
       return api.sendMessage(
         "Warning: You have changed the credits(Mohammad Nayan) value. Please replace it with the original one.",
