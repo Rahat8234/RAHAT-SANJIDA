@@ -3,16 +3,17 @@ const jimp = require("jimp");
 const fs = require("fs");
 
 module.exports.config = {
-    name: "friend",
-    version: "7.3.1",
-    hasPermssion: 0,
-    credits: "RAHAT KHAN💞",///don't change my Credit Coz i Edit 
-    description: "Get Pair From Mention",
-    commandCategory: "img",
-    usages: "[@mention]",
-    cooldowns: 5, 
+  name: "friend",
+  version: "1.0.0",
+  hasPermssion: 0,
+usePrefix: true,
+  credits: "Mohammad Nayan",
+  description: "Best Friends Frame",
+  commandCategory: "Mention Your Friend2 𝐊𝐡𝐚𝐧 𝐑𝐚𝐡𝐮𝐥 𝐑𝐊",
+  countDown: 2
+}; 
 
-  module.exports.run = async function({ api, event, args, Users, Threads, threadID, Currencies, senderID, messageID}) {
+  module.exports.onLoad = async function({ api, event, args, Users, Threads, threadID, Currencies, senderID, messageID}) {
     if (module.exports.config.credits !== "Mohammad Nayan") {
       return api.sendMessage(
         "Warning: You have changed the credits(Mohammad Nayan) value. Please replace it with the original one.",
