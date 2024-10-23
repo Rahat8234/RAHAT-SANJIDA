@@ -1,74 +1,59 @@
+const axios = require('axios');
+const jimp = require("jimp");
+const fs = require("fs");
+
 module.exports.config = {
     name: "friend",
     version: "7.3.1",
     hasPermssion: 0,
-    credits: "RAHAT",///don't change my Credit Coz i Edit 
+    credits: "RAHAT KHAN💞",///don't change my Credit Coz i Edit 
     description: "Get Pair From Mention",
     commandCategory: "img",
     usages: "[@mention]",
     cooldowns: 5, 
-    dependencies: {
-        "axios": "",
-        "fs-extra": "",
-        "path": "",
-        "jimp": ""
+
+  module.exports.run = async function({ api, event, args, Users, Threads, threadID, Currencies, senderID, messageID}) {
+    if (module.exports.config.credits !== "Mohammad Nayan") {
+      return api.sendMessage(
+        "Warning: You have changed the credits(Mohammad Nayan) value. Please replace it with the original one.",
+        event.threadID,
+        event.messageID
+      );
     }
-};
+    const uid = event.senderID;
+    const info = args.join(" ");
+    var nn = await Users.getNameUser(uid);
+  var nam = await Users.getNameUser(id);
+  var ThreadInfo = await api.getThreadInfo(event.threadID);
+    const apis = await axios.get('https://raw.githubusercontent.com/MOHAMMAD-NAYAN/Nayan/main/api.json')
+  const n = apis.data.api
+    if (!info) {
+      return api.sendMessage(`${nn}, Pleace Tag Your 2 Friends`, event.threadID);
+    } else {
+      var id = Object.keys(event.mentions)[0] || event.senderID;
+      var ids = Object.keys(event.mentions)[1] || event.senderID;
+      var name = await Users.getNameUser(id);
+      var name2 = await Users.getNameUser(uid);
+      var name3 = await Users.getNameUser(ids);
 
-module.exports.onLoad = async() => {
-    const { resolve } = global.nodemodule["path"];
-    const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
-    const { downloadFile } = global.utils;
-    const dirMaterial = __dirname + `/cache/canvas/`;
-    const path = resolve(__dirname, 'cache/canvas', 'arr6.png');
-    if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://i.imgur.com/FGdorom.jpg", path); 
-}
+      api.sendMessage(`Processing your Image, please wait...`, event.threadID, (err, info) => setTimeout(() => { api.unsendMessage(info.messageID) }, 5000));
 
-async function makeImage({ one, two }) {
-    const fs = global.nodemodule["fs-extra"];
-    const path = global.nodemodule["path"];
-    const axios = global.nodemodule["axios"]; 
-    const jimp = global.nodemodule["jimp"];
-    const __root = path.resolve(__dirname, "cache", "canvas");
+      const img = `${n}/nayan/friend?uid=${ids}&uid2=${uid}&uid3=${id}`;
 
-    let batgiam_img = await jimp.read(__root + "/arr6.png");
-    let pathImg = __root + `/batman${one}_${two}.png`;
-    let avatarOne = __root + `/avt_${one}.png`;
-    let avatarTwo = __root + `/avt_${two}.png`;
-    
-    let getAvatarOne = (await axios.get(`https://graph.facebook.com/${one}/picture?width=513&height=513&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
-    fs.writeFileSync(avatarOne, Buffer.from(getAvatarOne, 'utf-6'));
-    
-    let getAvatarTwo = (await axios.get(`https://graph.facebook.com/${two}/picture?width=513&height=513&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
-    fs.writeFileSync(avatarTwo, Buffer.from(getAvatarTwo, 'utf-6'));
-    
-    let circleOne = await jimp.read(await circle(avatarOne));
-    let circleTwo = await jimp.read(await circle(avatarTwo));
-    batgiam_img.composite(circleOne.resize(210, 200), 80, 110).composite(circleTwo.resize(222, 200), 416, 116);
-    
-    let raw = await batgiam_img.getBufferAsync("image/png");
-    
-    fs.writeFileSync(pathImg, raw);
-    fs.unlinkSync(avatarOne);
-    fs.unlinkSync(avatarTwo);
-    
-    return pathImg;
-}
-async function circle(image) {
-    const jimp = require("jimp");
-    image = await jimp.read(image);
-    image.circle();
-    return await image.getBufferAsync("image/png");
-}
-
-module.exports.run = async function ({ event, api, args }) {    
-    const fs = global.nodemodule["fs-extra"];
-    const { threadID, messageID, senderID } = event;
-    const mention = Object.keys(event.mentions);
-    if (!mention[0]) return api.sendMessage("Please mention 1 person.", threadID, messageID);
-    else {
-        const one = senderID, two = mention[0];
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "╔═══❖••° °••❖═══╗", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
-    }
+      try {
+        const response = await axios.get(img, { responseType: 'arraybuffer' });
+        const image = await jimp.read(response.data);
+        const outputPath = `./fbcoverv2_${uid}.png`;
+        await image.writeAsync(outputPath);
+        
+        const attachment = fs.createReadStream(outputPath);
+        api.sendMessage({ 
+          body: `[💏]FRIEND 1. ${name2}\n[💏]FRIEND 2. ${name}\n[💏]FRIEND 3. ${name3}`,
+          attachment
+        }, event.threadID, () => fs.unlinkSync(outputPath));
+      } catch (error) {
+        console.error(error);
+        api.sendMessage("An error occurred while generating the image.", event.threadID);
       }
+    }
+  }
