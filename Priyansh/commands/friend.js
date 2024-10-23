@@ -6,7 +6,7 @@ module.exports.config = {
   name: "friend",
   version: "1.0.0",
   hasPermssion: 0,
-usePrefix: true,
+  usePrefix: true,
   credits: "Mohammad Nayan",
   description: "Best Friends Frame",
   commandCategory: "Mention Your Friend2 𝐊𝐡𝐚𝐧 𝐑𝐚𝐡𝐮𝐥 𝐑𝐊",
