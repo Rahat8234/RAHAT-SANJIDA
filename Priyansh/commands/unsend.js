@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "unsend",
 	version: "1.0.1",
-	hasPermssion: 2,
+	hasPermssion: 0,
 	credits: "RAHAT",
 	description: "BOT MESSAGE UNSEND",
 	commandCategory: "system",
