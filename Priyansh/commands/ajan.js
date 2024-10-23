@@ -19,7 +19,7 @@ module.exports.onLoad = async ({ api }) => {
       message: "এখন ফরজ এর আজান দিবে সবাই নামাজ পরে নাও",
       url: "https://i.imgur.com/7K67WOG.jpeg"
     },
-    "04:05 PM": {
+    "04:00 PM": {
       message: "একটু পরে আছরের আজান দিবে সবাই নামাজ আদায় করে নিবেন",
       url: "https://i.imgur.com/hprI30O.jpeg"
     },
