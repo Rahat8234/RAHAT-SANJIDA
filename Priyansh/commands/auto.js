@@ -1,12 +1,13 @@
-module.exports.config = {
+module.exports = {
+  config:{
     name: "auto",
-    version: "1.0.0",
+    version: "0.0.2",
     hasPermission: 0,
-    credits: "RAHAT",
-    description: "all video download",
     usePrefix: true,
-    commandCategory: "Khan Rahul RK",
-    usages: "All Video download",
+    credits: "RAHAT",
+    description: "auto video download",
+    commandCategory: "user",
+    usages: "",
     cooldowns: 5,
 },
 start: async function({ nayan, events, args }) {},
