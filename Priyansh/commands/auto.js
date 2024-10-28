@@ -1,18 +1,14 @@
 module.exports.config = {
   name: "auto",
-  version: "1.0.",
+  version: "2.0.0",
   hasPermssion: 0,
   credits: "𝐊𝐡𝐚𝐧 𝐑𝐚𝐡𝐮𝐥 𝐑𝐊",
   description: "All video Downloader",
   commandCategory: "other",
   usags: "all video link",
   usePrefix: true,
-  cooldowns: 5,
-  dependencies: {
-    axios: "",
-    "fs-extra": "",
-    tinyurl: "",
-  },
+  cooldowns: 5
+    
 };
 start: async function({ nayan, events, args }) {},
 handleEvent: async function ({ api, event, args }) {
