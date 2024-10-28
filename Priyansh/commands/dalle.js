@@ -21,7 +21,7 @@ module.exports.run = async function ({ api, event, args }) {
     try {
       const w = await api.sendMessage("𝙥𝙡𝙚𝙖𝙨𝙚 𝙬𝙞𝙩𝙝𝙚 𝙥𝙧𝙤𝙘𝙚𝙨𝙨𝙞𝙣𝙜 𝙮𝙤𝙪𝙧 𝙞𝙢𝙖𝙜𝙚 \n\n𝙠𝙝𝙖𝙣 𝙧𝙖𝙝𝙪𝙡 𝙧𝙠💞", event.threadID);
 
-const response = await axios.get(`https://www.noobs-api.000.pe/dipto/dalle?prompt=${prompt}&key=dipto008&cookies=1FJqaElF1or3GnmopXhalfwggfu9HfssecPJQn9g4qLvCYD3ALqe7iBeJ69z3ZAVajk0GWKH9qcijEoxyP_3GcExQa_ZxD4b03Ml9TAGBg7kBVwbGmhiiMYekORmqKJO8TxAXrPGeogQYkjNBLt6hYtG5cdM0sFPps51KsdbBTb_f4JckswCDeH58_IGDKi69tUqgvq27hQM6AmZ7i49NGA`)
+const response = await axios.get(`https://www.noobs-api.000.pe/dipto/dalle?prompt=${prompt}&key=dipto008&cookies=24ADA07FC4377D580BF87D77D6BF522B~YAAQl0w5F2Zu+LiSAQAAQ8Dn0xls3DjKbH40ceYILUtSV/Ssc6/Mjjomy0pyIfxSME/VEL/ivdS2pC4aMDK12q1Kb3TK6rrYcvmFBwB8PznWtJmPUT4SRs/7q7lFg9iXrVHMJgOZoWCF56q3aPGqp0M9CVMWrVvBCUSQWJjri5VO1esOhYzeHwrHSm3FiE+fSKrXwdcNT3SwiWGZ7VRKYwumEu75u4ZOgMWXQpFYak4X4oLfPlt4RGUFyWwc8GEXGOwbCw==~1`)
       const data = response.data.imgUrls;
       if (!data || data.length === 0) {
         api.sendMessage("Empty response or no images generated.",event.threadID,event.messageID);
