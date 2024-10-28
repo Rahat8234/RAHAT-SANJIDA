@@ -1,15 +1,21 @@
-module.exports = {
-  config:{
-    name: "auto",
-    version: "0.0.2",
-    hasPermission: 0,
-    usePrefix: true,
-    credits: "RAHAT",
-    description: "auto video download",
-    commandCategory: "user",
-    usages: "",
-    cooldowns: 5,
-},
+module.exports.config = {
+  name: "auto",
+  version: "1.0.",
+  hasPermssion: 0,
+  credits: "𝐊𝐡𝐚𝐧 𝐑𝐚𝐡𝐮𝐥 𝐑𝐊",
+  description: "All video Downloader",
+  commandCategory: "other",
+  category: "others",
+  usags: "all video link",
+  usePrefix: true,
+  prefix: true,
+  cooldowns: 2,
+  dependencies: {
+    axios: "",
+    "fs-extra": "",
+    tinyurl: "",
+  },
+};
 start: async function({ nayan, events, args }) {},
 handleEvent: async function ({ api, event, args }) {
     const axios = require("axios")
