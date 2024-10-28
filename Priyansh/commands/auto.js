@@ -1,15 +1,14 @@
-module.exports.config = {
+module.exports = {
+  config,
   name: "auto",
   version: "1.0.",
   hasPermssion: 0,
   credits: "𝐊𝐡𝐚𝐧 𝐑𝐚𝐡𝐮𝐥 𝐑𝐊",
   description: "All video Downloader",
   commandCategory: "other",
-  category: "others",
   usags: "all video link",
   usePrefix: true,
-  prefix: true,
-  cooldowns: 2,
+  cooldowns: 5,
   dependencies: {
     axios: "",
     "fs-extra": "",
