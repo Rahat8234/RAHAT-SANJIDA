@@ -7,14 +7,21 @@ const baseApiUrl = async () => {
   return base.data.mostakim;
 };
 module.exports.config = {
-  name: '4k',
-  version: '1.1.1',
+  name: "4k",
+  version: "1.0.0",
   hasPermssion: 2,
-  credits: 'RAHAT',
-  description: 'Edit photo',
-  commandCategory: 'Tools',
-  usages: 'Reply images or url images',
+  credits: "RAHUL",
+  description: "Hd Picture 4k",
+  commandCategory: "Khan Rahul RK",
+  usages: "4k image",
   cooldowns: 10,
+  dependencies: {
+    "request":"",
+    "fs-extra":"",
+    "axios":""
+  }
+};
+    
 
 module.exports.run = async ({ api, event, args }) => {
   try {
