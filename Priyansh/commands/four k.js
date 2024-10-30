@@ -1,3 +1,11 @@
+const axios = require("axios");
+
+const baseApiUrl = async () => {
+  const base = await axios.get(
+    `https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`
+  );
+  return base.data.mostakim;
+};
 module.exports.config = {
   name: '4k',
   version: '1.1.1',
@@ -7,52 +15,32 @@ module.exports.config = {
   commandCategory: 'Tools',
   usages: 'Reply images or url images',
   cooldowns: 10,
-    dependencies: {
-       'nayan-server': ''
-    }
-};
 
-module.exports.run = async function({ api, event, args }) {
-  
-    const axios = require("axios")
-    const request = require("request")
-    const fs = require("fs-extra")
-    const {upscale} = require('nayan-server')
-          if (event.type !== "message_reply") return api.sendMessage("[❗]➜ You must reply to a photo", event.threadID, event.messageID);
-        if (!event.messageReply.attachments || event.messageReply.attachments.length == 0) return api.sendMessage("[❗]➜ You must reply to a photo", event.threadID, event.messageID);
-        if (event.messageReply.attachments[0].type != "photo") return api.sendMessage("[❓]➜ This is not an image", event.threadID, event.messageID);
-  const content = (event.type == "message_reply") ? event.messageReply.attachments[0].url : args.join(" ");
-  
-  const mod = args[0] || "1";
-  
-const model = mod
+module.exports.run = async ({ api, event, args }) => {
   try {
-const res = await upscale(content, model)
-  console.log(res)
-  api.setMessageReaction("✅", event.messageID, (err) => {
-      }, true);
-  const img1 = res.image_url
-  const job = res.job_id
-        var msg = [];
 
-  const pic = (
-    await axios.get(`https://images.prodia.xyz/${job}.png`,
-      { responseType: 'stream' }
-    )
-  ).data;
+    if (!event.messageReply || !event.messageReply.attachments || !event.messageReply.attachments[0]) {
+      return api.sendMessage("𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐩𝐥𝐲 𝐭𝐨 𝐚𝐧 𝐢𝐦𝐚𝐠𝐞 𝐰𝐢𝐭𝐡 𝐭𝐡𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝.", event.threadID, event.messageID);
+    }
 
-        {
-            msg += `✅HERE YOUR PHOTO`
-        }
 
-        return api.sendMessage({
-            body: msg,
-            attachment: pic
+    const Romim = event.messageReply?.attachments[0]?.url;
 
-        }, event.threadID, event.messageID);
-     } catch (err) {
-     api.setMessageReaction("❌", event.messageID, (err) => {
-    }, true);
-      api.sendMessage(`🔰Use ${global.config.PREFIX}${this.config.name} [model]\n🔰Example:${global.config.PREFIX}${this.config.name} 1\n\n🔥Total Model limit 2...`, event.threadID, event.messageID);  
-     }
-  };
+
+    const apiUrl = (`${await baseApiUrl()}/remini?input=${encodeURIComponent(Romim)}`);
+ 
+
+    const imageStream = await axios.get(apiUrl,{
+      responseType: 'stream'
+    });
+
+
+    api.sendMessage({
+      body: "𝐇𝐞𝐫𝐞 𝐢𝐬 𝐲𝐨𝐮𝐫 𝐞𝐧𝐡𝐚𝐧𝐜𝐞𝐝 𝐩𝐡𝐨𝐭𝐨",
+      attachment: imageStream.data
+    }, event.threadID, event.messageID);
+
+  } catch (e) {
+    api.sendMessage(`Error: ${e.message}`, event.threadID, event.messageID);
+  }
+};
