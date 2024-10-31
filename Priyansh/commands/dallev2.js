@@ -6,7 +6,7 @@ module.exports.config = {
     name: "bing",
     version: "1.0",
     credits: "RAHUL",
-    hasPermssion:, 0,
+    hasPermssion: 0,
     description: "Generate images by Dalle-3 AI",
     commandCategory: "download",
     usages: "[text] \nJamon [A 17/18/19 years old boy/girl watching football match on tv and written Rahul and 69 on the back of his Dress , 4k]",
