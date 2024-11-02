@@ -1,13 +1,13 @@
 module.exports.config = {
-  name: "bombing",
-  version: "1.0.0",
-  hasPermssion: 2, //DONT CHANGE THIS MODIFIER CREDIT RAHAT-KHAN
-  credits: "RAHAT KHAN",
-  description: "এসএমএস বোম্বার, শুধুমাত্র বাংলাদেশি নাম্বারের জন্য প্রযোজ্য",
-  commandCategory: "Tool",
-  usages: ".sms number text",
-  cooldowns: 15,
-  dependencies: {"axios" : ""}
+  name: "bombing",
+  version: "1.0.0",
+  hasPermssion: 2, //DONT CHANGE THIS MODIFIER CREDIT RAHAT-KHAN
+  credits: "RAHAT KHAN",
+  description: "এসএমএস বোম্বার, শুধুমাত্র বাংলাদেশি নাম্বারের জন্য প্রযোজ্য",
+  commandCategory: "Tool",
+  usages: ".sms number text",
+  cooldowns: 5,
+    dependencies: {}
 };
 
 module.exports.run = async function({ api, event, args }) {
