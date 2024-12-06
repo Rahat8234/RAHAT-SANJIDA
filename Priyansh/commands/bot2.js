@@ -2,13 +2,14 @@ const axios = require('axios');
 const fs = require('fs'); 
 const path = require('path');
 
-module.exports.config = {
+module.exports = {
+  config: {
   name: "goibot3",
   version: "1.0.1",
   hasPermssion: 0,
   credits: "RAHAT",
   description: "goibot",
-  usePrefix: "awto",
+  usePrefix: 'awto',
   commandCategory: "Noprefix",
   usages: "noprefix",
   cooldowns: 5,
