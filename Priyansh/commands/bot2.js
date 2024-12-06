@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
   config: {
-  name: "goibot3",
+  name: "goibot4",
   version: "1.0.1",
   hasPermssion: 0,
   credits: "RAHAT",
