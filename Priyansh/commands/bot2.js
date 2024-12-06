@@ -2,18 +2,19 @@ const axios = require('axios');
 const fs = require('fs'); 
 const path = require('path');
 
-module.exports = {
-  config: {
-    name: "bot",
-    version: "1.0.0",
-    hasPermssion: 0,
-    credits: "RAHAT",
-    description: "talk with bot",
-    usePrefix: 'awto',
-    commandCategory: "talk",
-    usages: "hi",
-    cooldowns: 5,
-  },
+module.exports.config = {
+  name: "bot",
+  version: "6.9.9",
+  credits: "RAHAT KHAN🌹",
+  cooldowns: 0,
+  hasPermssion: 0,
+  description: "better than all sim simi",
+  commandCategory: "chat",
+  category: "chat",
+  usePrefix: true,
+  prefix: true,
+  usages: `[anyMessage] OR\nteach [YourMessage] - [Reply1], [Reply2], [Reply3]... OR\nteach [react] [YourMessage] - [react1], [react2], [react3]... OR\nremove [YourMessage] OR\nrm [YourMessage] - [indexNumber] OR\nmsg [YourMessage] OR\nlist OR\nall OR\nedit [YourMessage] - [NewMessage]`,
+};
 
   handleReply: async function ({ api, event }) {
     try {
